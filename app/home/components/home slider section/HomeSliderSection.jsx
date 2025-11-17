@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import styles from "./Slider.module.css";
+import styles from "./HomeSliderSection.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,7 +8,7 @@ import { Navigation } from "swiper/modules";
 import carousel1 from "./carousel-1.jpg";
 import carousel2 from "./carousel-2.jpg";
 
-function Slider() {
+function HomeSliderSection() {
   return (
     <Swiper
       // rewind={true}
@@ -50,4 +50,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default HomeSliderSection;
