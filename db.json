@@ -10,14 +10,45 @@
     },
     {
       "id": 2,
-      "title": "Chocolete Coffee",
+      "title": "Chocolate Coffee",
       "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
       "price": 7,
       "img": "/images/menu-2.jpg",
       "off": 0
-    }
+    },
+    {
+      "id": 3,
+      "title": "Chocolate Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 7,
+      "img": "/images/menu-2.jpg",
+      "off": 0
+    },
+    {
+      "id": 4,
+      "title": "Chocolate Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 7,
+      "img": "/images/menu-2.jpg",
+      "off": 0
+    },
+    {
+      "id": 5,
+      "title": "Chocolate Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 7,
+      "img": "/images/menu-2.jpg",
+      "off": 0
+    },
+    {
+      "id": 6,
+      "title": "Chocolate Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 7,
+      "img": "/images/menu-2.jpg",
+      "off": 0
+    },
   ],
-
   "services": [
     {
       "id": 1,
@@ -48,18 +79,12 @@
       "icon": "faTable"
     }
   ],
-
   "newsLetters": [
     {
-      "id": 1,
-      "email": "amin@gmail.com"
-    },
-    {
-      "id": 2,
-      "email": "qadir@gmail.com"
+      "id": "f324",
+      "email": "mahdiamiri1208@gmail.com"
     }
   ],
-
   "comment": [
     {
       "id": 1,
@@ -68,7 +93,6 @@
       "productID": 1,
       "score": 5
     },
-
     {
       "id": 2,
       "username": "Amin_Saeedi",
