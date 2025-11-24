@@ -1,5 +1,5 @@
 import React from "react";
-import HomeServiceItem from "./HomeServiceItem";
+import HomeServiceItem from "./ServiceItem";
 
 export default async function HomeServices() {
   const res = await fetch("http://localhost:4000/services", {

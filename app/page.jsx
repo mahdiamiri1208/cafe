@@ -1,10 +1,9 @@
-// app/page.jsx
 import React from "react";
 import Slider from "./home/components/home slider section/HomeSliderSection";
-import HomeAboutSection from "./home/components/home about section/HomeAboutSection";
-import HomeServices from "./home/components/home our services section/HomeServices";
+import HomeAboutSection from "./components/about section/AboutSection";
+import HomeServices from "./components/our services section/Services";
 import HomeNewsletter from "./home/components/home newsletter section/HomeNewsletter";
-import HomeMenu from "./home/components/home menu section/HomeMenu";
+import HomeMenu from "./components/menu section/Menu";
 import HomeBookTable from "./home/components/home book table section/HomeBookTable";
 import HomeComment from "./home/components/home comment section/HomeComment";
 
