@@ -4,20 +4,16 @@ import Slider from "./home/components/home slider section/HomeSliderSection";
 import HomeAboutSection from "./home/components/home about section/HomeAboutSection";
 import HomeServices from "./home/components/home our services section/HomeServices";
 import HomeNewsletter from "./home/components/home newsletter section/HomeNewsletter";
+import HomeMenu from "./home/components/home menu section/HomeMenu";
 
-export default async function Page() {
-  const res = await fetch("http://localhost:4000/services", {
-    next: { revalidate: 60 * 60 * 12 },
-  });
-
-  const services = await res.json();
-
+export default function Page() {
   return (
     <>
       <Slider />
       <HomeAboutSection />
-      <HomeServices services={services} />
+      <HomeServices />
       <HomeNewsletter />
+      <HomeMenu />
     </>
   );
 }
