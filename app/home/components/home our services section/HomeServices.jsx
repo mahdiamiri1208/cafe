@@ -1,7 +1,13 @@
 import React from "react";
 import HomeServiceItem from "./HomeServiceItem";
 
-export default function HomeServices({ services = [] }) {
+export default async function HomeServices() {
+  const res = await fetch("http://localhost:4000/services", {
+    next: { revalidate: 60 * 60 * 12 },
+  });
+
+  const services = await res.json();
+
   return (
     <div className="container-fluid pt-5">
       <div className="container">
