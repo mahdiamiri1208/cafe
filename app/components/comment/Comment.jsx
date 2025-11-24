@@ -1,5 +1,5 @@
 import React from "react";
-import HomeCommentItem from "./HomeCommentItem";
+import HomeCommentItem from "./CommentItem";
 
 export default async function HomeComment() {
   const res = await fetch("http://localhost:4000/comments", {

@@ -1,10 +1,14 @@
-import React from 'react'
-import Header from "../components/header/Header"
+import React from "react";
+import Header from "../components/header/Header";
+import Comment from "../components/comment/Comment";
 
 function page() {
   return (
-    <Header/>
-  )
+    <>
+      <Header route="Testimonial" />
+      <Comment />
+    </>
+  );
 }
 
-export default page
+export default page;

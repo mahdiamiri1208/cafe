@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 import Header from "../components/header/Header";
-
+import BookTable from "../components/book table/BookTable";
 
 function page() {
   return (
-    <h1>reserve</h1>
-  )
+    <>
+      <Header route="Reservation" />
+      <BookTable />
+    </>
+  );
 }
 
-export default page
+export default page;
