@@ -94,35 +94,28 @@
       "id": 1,
       "name": "John Doe",
       "profession": "Web Developer",
-      "img": "/testimonial/testimonial-1.jpg",
+      "img": "/home-comment/testimonial-1.jpg",
       "text": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem."
     },
     {
       "id": 2,
       "name": "Jane Smith",
       "profession": "UI/UX Designer",
-      "img": "/testimonial/testimonial-2.jpg",
+      "img": "/home-comment/testimonial-2.jpg",
       "text": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem."
     },
     {
       "id": 3,
       "name": "Michael Brown",
       "profession": "Photographer",
-      "img": "/testimonial/testimonial-3.jpg",
+      "img": "/home-comment/testimonial-3.jpg",
       "text": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem."
     },
     {
       "id": 4,
       "name": "Emily Johnson",
       "profession": "Marketing Expert",
-      "img": "/testimonial/testimonial-4.jpg",
-      "text": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem."
-    },
-    {
-      "id": 5,
-      "name": "David Wilson",
-      "profession": "Entrepreneur",
-      "img": "/testimonial/testimonial-5.jpg",
+      "img": "/home-comment/testimonial-4.jpg",
       "text": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem."
     }
   ],
