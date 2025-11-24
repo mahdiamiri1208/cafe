@@ -5,6 +5,7 @@ import HomeAboutSection from "./home/components/home about section/HomeAboutSect
 import HomeServices from "./home/components/home our services section/HomeServices";
 import HomeNewsletter from "./home/components/home newsletter section/HomeNewsletter";
 import HomeMenu from "./home/components/home menu section/HomeMenu";
+import HomeBookTable from "./home/components/home book table section/HomeBookTable";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <HomeServices />
       <HomeNewsletter />
       <HomeMenu />
+      <HomeBookTable />
     </>
   );
 }
