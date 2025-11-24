@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Header from "../components/header/Header";
 
 function page() {
-  return (
-    <h1>services</h1>
-  )
+  return <Header />;
 }
 
-export default page
+export default page;

@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from "../components/header/Header";
+
 
 function page() {
   return (
-    <h1>menu</h1>
+    <Header/>
   )
 }
 
