@@ -5,7 +5,7 @@ import Header from "../components/header/Header";
 function page() {
   return (
     <>
-      <Header route="About Us"/>
+      <Header route="About"/>
       <AboutSection />
     </>
   );

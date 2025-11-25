@@ -18,7 +18,7 @@ export default function Header({route}) {
           <Link className="text-white" href="/">Home</Link>
           </p>
           <p className="m-0 text-white px-2">/</p>
-          <p className="m-0 text-white">{route}</p>
+          <Link className="m-0 text-white" href={route.toLowerCase()}>{route}</Link>
         </div>
       </div>
     </div>
