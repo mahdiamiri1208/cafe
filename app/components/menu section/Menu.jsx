@@ -2,7 +2,7 @@ import HomeMenuItem from "./MenuItem";
 
 export default async function HomeMenu() {
   const res = await fetch("http://localhost:4000/menu", {
-    cache: "no-store",
+    next: { revalidate: 60 * 60 * 12 },
   });
   const menuCategories = await res.json();
 
