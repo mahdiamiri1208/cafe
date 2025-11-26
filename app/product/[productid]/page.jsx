@@ -47,18 +47,20 @@ export default async function Page({ params }) {
   }
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        padding: "150px",
-      }}
-    >
-      <ProductsDetails data={product} />
+    <>
+      <div
+        style={{
+          background:
+            "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "150px",
+        }}
+      >
+        <ProductsDetails data={product} />
+      </div>
       <Comments data={product.comments || []} />
-    </div>
+    </>
   );
 }
