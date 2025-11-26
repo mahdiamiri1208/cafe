@@ -8,21 +8,27 @@
           "title": "Hot Chocolate",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 5,
-          "image": "/home-menu/menu-3.jpg"
+          "image": "/home-menu/menu-3.jpg",
+          "rating": 4,
+          "off": 20
         },
         {
           "id": 2,
           "title": "Tea",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 7,
-          "image": "/home-menu/menu-4.jpeg"
+          "image": "/home-menu/menu-4.jpeg",
+          "rating": 3,
+          "off": 0
         },
         {
           "id": 3,
           "title": "Coffee With Milk",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 9,
-          "image": "/home-menu/menu-1.jpg"
+          "image": "/home-menu/menu-1.jpg",
+          "rating": 4,
+          "off": 10
         }
       ]
     },
@@ -34,21 +40,27 @@
           "title": "Banana Milk",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 5,
-          "image": "/home-menu/menu-4.jpeg"
+          "image": "/home-menu/menu-4.jpeg",
+          "rating": 5,
+          "off": 5
         },
         {
           "id": 5,
           "title": "Black Coffee",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 7,
-          "image": "/home-menu/menu-5.jpeg"
+          "image": "/home-menu/menu-5.jpeg",
+          "rating": 5,
+          "off": 0
         },
         {
           "id": 6,
           "title": "Ice Cream",
           "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
           "price": 9,
-          "image": "/home-menu/menu-3.jpg"
+          "image": "/home-menu/menu-3.jpg",
+          "rating": 2,
+          "off": 15
         }
       ]
     }

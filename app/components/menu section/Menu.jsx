@@ -29,6 +29,7 @@ export default async function HomeMenu() {
                     desc={item.desc}
                     image={item.image}
                     price={item.price}
+                    id={item.id}
                   />
                 </div>
               ))}
