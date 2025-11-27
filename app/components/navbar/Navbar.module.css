@@ -107,46 +107,6 @@
   background-size: 100% 100%;
 }
 
-@media (min-width: 992px) {
-  .navbar {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
-
-  .navbar_nav {
-    flex-direction: row;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-  }
-
-  .nav_link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-
-  .navbar {
-    flex-wrap: nowrap;
-  }
-
-  .navbar_collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-
-  .navbar_toggler {
-    display: none;
-  }
-}
-
-@media (max-width: 1199.98px) {
-  .navbar {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
 .navbar_brand {
   color: #fff;
 }
@@ -186,44 +146,41 @@
   color: #fff;
 }
 
-@media (min-width: 992px) {
-  .navbar_expand_lg {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
-
-  .navbar_nav {
-    flex-direction: row;
-  }
-
-  .dropdown_menu {
-    position: absolute;
-  }
-
-  .nav_link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-
-  .navbar_expand_lg > .container,
-  .navbar_expand_lg > .container-fluid,
-  .navbar_expand_lg > .container-sm,
-  .navbar_expand_lg > .container-md,
-  .navbar_expand_lg > .container-lg,
-  .navbar_expand_lg > .container-xl {
-    flex-wrap: nowrap;
-  }
-
-  .navbar_expand_lg .navbar_collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-
-  .navbar_expand_lg .navbar_toggler {
-    display: none;
-  }
+/* موبایل منو باید زیر Navbar باز شود و نه داخل خود navbar */
+.mobile_menu {
+  position: fixed;
+  top: 70px; /* ارتفاع Navbar */
+  left: 0;
+  width: 100%;
+  background: #33211d;
+  z-index: 999;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
 }
 
+.menu_open {
+  max-height: 100vh;
+}
+
+.menu_close {
+  max-height: 0;
+}
+
+/* زیرمنوی موبایل و رنگ inherit */
+.dropdown_menu {
+  position: static !important;
+  background: #33211d !important; /* رنگ inherit */
+  padding-left: 30px !important; /* فاصله به راست */
+  border: none !important;
+}
+
+.dropdown_item {
+  background: inherit; /* رنگ inherit */
+}
+.dropdown_item:hover {
+  color: inherit !important; /* رنگ inherit */
+}
 .nav_link {
   display: block;
   padding: 0.5rem 1rem;
@@ -352,4 +309,91 @@
 }
 .search_input::placeholder {
   color: white;
+}
+@media (min-width: 992px) {
+  .navbar {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .navbar_nav {
+    flex-direction: row;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+  }
+
+  .nav_link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .navbar {
+    flex-wrap: nowrap;
+  }
+
+  .navbar_collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar_toggler {
+    display: none;
+  }
+  .dropdown_menu {
+    position: absolute;
+    background: inherit; /* رنگ inherit به جای سفید */
+    padding-left: 10px; /* فاصله به راست */
+    top: 100%;
+    left: 0;
+    display: none;
+    min-width: 10rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown:hover .dropdown_menu {
+    display: block !important;
+  }
+
+  .dropdown_item:hover,
+  .dropdown_item:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* کمی برجسته شود */
+    color: inherit;
+  }
+  .navbar_expand_lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .navbar_nav {
+    flex-direction: row;
+  }
+
+  .dropdown_menu {
+    position: absolute;
+  }
+
+  .nav_link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .navbar_expand_lg > .container,
+  .navbar_expand_lg > .container-fluid,
+  .navbar_expand_lg > .container-sm,
+  .navbar_expand_lg > .container-md,
+  .navbar_expand_lg > .container-lg,
+  .navbar_expand_lg > .container-xl {
+    flex-wrap: nowrap;
+  }
+
+  .navbar_expand_lg .navbar_collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar_expand_lg .navbar_toggler {
+    display: none;
+  }
 }
