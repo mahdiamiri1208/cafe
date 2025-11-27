@@ -2,16 +2,25 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import React, { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function Navbar() {
   const route = useRouter();
+  const pathname = usePathname();
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
   const navRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const [navHeight, setNavHeight] = useState(0);
   const [navBottom, setNavBottom] = useState(0);
+
+  // تابعی برای بررسی فعال بودن لینک
+  const isActiveLink = (linkPath) => {
+    if (linkPath === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(linkPath);
+  };
 
   // محاسبه ارتفاع navbar و در صورت باز بودن منو، محاسبه navBottom
   useEffect(() => {
@@ -165,27 +174,58 @@ function Navbar() {
             >
               <Link
                 href="/"
-                className={`${styles.nav_link} ${styles.active_nav_link} nav-item`}
+                className={`${styles.nav_link} ${
+                  isActiveLink("/") ? styles.active_nav_link : ""
+                } nav-item`}
               >
                 Home
               </Link>
-              <Link href="/about" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/about"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/about") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 About
               </Link>
-              <Link href="/services" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/services"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/services") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 Service
               </Link>
-              <Link href="/menu" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/menu"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/menu") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 Menu
               </Link>
-              <Link href="/testimonial" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/testimonial"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/testimonial") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 Testimonial
               </Link>
-              <Link href="/reservation" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/reservation"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/reservation") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 Reservation
               </Link>
-
-              <Link href="/contact" className={`${styles.nav_link} nav-item`}>
+              <Link
+                href="/contact"
+                className={`${styles.nav_link} ${
+                  isActiveLink("/contact") ? styles.active_nav_link : ""
+                } nav-item`}
+              >
                 Contact
               </Link>
             </div>
@@ -205,49 +245,63 @@ function Navbar() {
           <Link
             href="/"
             onClick={handleClose}
-            className={`${styles.nav_link} ${styles.active_nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Home
           </Link>
           <Link
             href="/about"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/about") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             About
           </Link>
           <Link
             href="/services"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/services") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Service
           </Link>
           <Link
             href="/menu"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/menu") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Menu
           </Link>
           <Link
             href="/testimonial"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/testimonial") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Testimonial
           </Link>
           <Link
             href="/reservation"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/reservation") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Reservation
           </Link>
           <Link
             href="/contact"
             onClick={handleClose}
-            className={`${styles.nav_link} nav-item`}
+            className={`${styles.nav_link} ${
+              isActiveLink("/contact") ? styles.active_nav_link : ""
+            } nav-item`}
           >
             Contact
           </Link>
