@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Café Website
 
-## Getting Started
+A modern, fully responsive café website built with Next.js, React, and JSON Server, designed with clean architecture, modular components, and a visually appealing UI optimized for both desktop and mobile.
 
-First, run the development server:
+Overview
 
-```bash
+This project showcases a professional front-end implementation of a café website. It provides dynamic product pages, a responsive layout, modular UI components, and structured data management powered by db.json (JSON Server).
+The goal is to deliver a fast, elegant, and scalable interface that can be easily extended with a real backend in the future.
+
+Core Technologies
+Front-End
+
+Next.js 14 / React 18 – fast routing, server/client rendering, scalable architecture
+
+React Bootstrap + Bootstrap – responsive design and UI components
+
+CSS Modules & Custom Styles – isolated styling without conflicts
+
+Data Layer
+
+db.json (JSON Server) used as a mock backend
+
+Fully supports CRUD operations (fetching, adding, editing, deleting data)
+
+Key Features
+UI/UX
+
+Fully responsive layout across all screen sizes
+
+Modern Navbar & Header, optimized for mobile and desktop
+
+Mobile Offcanvas Menu with collapsible submenus
+
+Hover Dropdown Menu for desktop navigation
+
+Responsive Search Box with improved mobile usability
+
+Reusable Product Cards
+
+Dynamic Product Details Page using Next.js dynamic routing
+
+Technical Features
+
+Clean separation between UI, logic, and data
+
+Modular, reusable React components
+
+Dynamic routes such as /products/[id]
+
+Data-driven UI powered entirely by JSON Server
+
+Scalable project architecture that supports future enhancements
+
+Architecture & Best Practices
+1. Component-Based Architecture
+
+All repeating UI elements (e.g., product cards, sections, menu items) are built as standalone components to ensure reusability and maintainability.
+
+2. Clean and Organized Folder Structure
+
+Ensures easy navigation and long-term scalability.
+
+3. Modern Responsive Design
+
+UI is carefully optimized for all breakpoints: desktop, tablet, and mobile.
+
+4. Mock Backend Integration
+
+db.json simulates a real backend environment, making the project fully dynamic without needing a real server.
+
+Folder Structure (Simplified)
+src/
+ ├── app/
+ │   ├── page.js
+ │   ├── products/
+ │   │   ├── page.js
+ │   │   └── [id]/
+ │   │       └── page.js
+ ├── components/
+ │   ├── Navbar/
+ │   ├── ProductCard/
+ │   ├── ProductDetails/
+ │   ├── Footer/
+ ├── services/
+ │   └── api.js
+ ├── data/
+ │   └── db.json
+ └── styles/
+
+JSON Server Setup
+
+Install JSON Server:
+
+npm install -g json-server
+
+
+Run the database:
+
+json-server --watch db.json --port 3001
+
+
+API Example:
+
+http://localhost:3001/products
+
+Running the Project
+
+Install dependencies:
+
+npm install
+
+
+Start development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Run JSON Server (if needed):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+json-server --watch db.json --port 3001
 
-## Learn More
+Strengths of This Project
+1. Fully Modular and Scalable
 
-To learn more about Next.js, take a look at the following resources:
+Components are structured professionally and can be reused across the project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Production-Level Responsive Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Navigation, product cards, forms, and sections all adapt perfectly to mobile, tablet, and desktop.
 
-## Deploy on Vercel
+3. Realistic Data Workflow Using JSON Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Simulates an actual backend environment, making the project ideal for portfolio and interviews.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Developer-Friendly Architecture
+
+Easy to maintain, extend, or transition into a full-stack application.
+
+5. Clean UI & Smooth User Experience
+
+Suitable for commercial café or restaurant websites.
