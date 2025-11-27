@@ -1,141 +1,185 @@
-Café Website
+# ☕ Coffee Shop Website  
+A modern, responsive, and fully client-side coffee shop website built with **Next.js**, **React**, **JSON database** using `db.json` (json-server).  
+The project includes dynamic product pages, discount handling, rating display, Swiper sliders, responsive UI, and modular component architecture.
 
-A modern, fully responsive café website built with Next.js, React, and JSON Server, designed with clean architecture, modular components, and a visually appealing UI optimized for both desktop and mobile.
+---
 
-Overview
+## ⭐ Features
 
-This project showcases a professional front-end implementation of a café website. It provides dynamic product pages, a responsive layout, modular UI components, and structured data management powered by db.json (JSON Server).
-The goal is to deliver a fast, elegant, and scalable interface that can be easily extended with a real backend in the future.
+- Fully responsive modern UI
+- Dynamic product details page
+- Discount calculation (old price + new price)
+- Star-based rating system
+- Swiper slider with navigation
+- Category-based menu with dynamic routing
+- Clean folder structure and reusable components
+- Local mock database using `db.json`
+- No backend required (json-server acts as API)
+- Optimized for performance and scalability
 
-Core Technologies
-Front-End
+---
 
-Next.js 14 / React 18 – fast routing, server/client rendering, scalable architecture
+## 🚀 Tech Stack
 
-React Bootstrap + Bootstrap – responsive design and UI components
+| Technology | Description |
+|-----------|-------------|
+| **Next.js 16** | App Router, dynamic routes, server & client components |
+| **React 19** | Component-driven UI |
+| **json-server** | Lightweight mock API via `db.json` |
+| **Swiper.js** | Interactive image slider |
+| **CSS Modules** | Scoped component styling |
+| **Font Awesome** | Icons |
 
-CSS Modules & Custom Styles – isolated styling without conflicts
+---
 
-Data Layer
+## 🗂 Project Structure
 
-db.json (JSON Server) used as a mock backend
+```
+/app
+ ├── home/
+ ├── product/
+ │    ├── [productId]/
+ │    │      └── page.jsx
+ │    ├── ProductsDetails.jsx
+ │    └── Comments.jsx
+ ├── globals.css
+└── public/
+      └── home-menu/
+```
 
-Fully supports CRUD operations (fetching, adding, editing, deleting data)
+---
 
-Key Features
-UI/UX
+## 📦 Installation & Setup
 
-Fully responsive layout across all screen sizes
+### 1) Clone the repository
+```bash
+git clone https://https://github.com/mahdiamiri1208/cafe
+cd coffee-shop
+```
 
-Modern Navbar & Header, optimized for mobile and desktop
-
-Mobile Offcanvas Menu with collapsible submenus
-
-Hover Dropdown Menu for desktop navigation
-
-Responsive Search Box with improved mobile usability
-
-Reusable Product Cards
-
-Dynamic Product Details Page using Next.js dynamic routing
-
-Technical Features
-
-Clean separation between UI, logic, and data
-
-Modular, reusable React components
-
-Dynamic routes such as /products/[id]
-
-Data-driven UI powered entirely by JSON Server
-
-Scalable project architecture that supports future enhancements
-
-Architecture & Best Practices
-1. Component-Based Architecture
-
-All repeating UI elements (e.g., product cards, sections, menu items) are built as standalone components to ensure reusability and maintainability.
-
-2. Clean and Organized Folder Structure
-
-Ensures easy navigation and long-term scalability.
-
-3. Modern Responsive Design
-
-UI is carefully optimized for all breakpoints: desktop, tablet, and mobile.
-
-4. Mock Backend Integration
-
-db.json simulates a real backend environment, making the project fully dynamic without needing a real server.
-
-Folder Structure (Simplified)
-src/
- ├── app/
- │   ├── page.js
- │   ├── products/
- │   │   ├── page.js
- │   │   └── [id]/
- │   │       └── page.js
- ├── components/
- │   ├── Navbar/
- │   ├── ProductCard/
- │   ├── ProductDetails/
- │   ├── Footer/
- ├── services/
- │   └── api.js
- ├── data/
- │   └── db.json
- └── styles/
-
-JSON Server Setup
-
-Install JSON Server:
-
-npm install -g json-server
-
-
-Run the database:
-
-json-server --watch db.json --port 3001
-
-
-API Example:
-
-http://localhost:3001/products
-
-Running the Project
-
-Install dependencies:
-
+### 2) Install dependencies
+```bash
 npm install
+```
 
+### 3) Run JSON Server (Local API)
+```bash
+npx json-server --watch db.json --port 4000
+```
 
-Start development server:
+API will be available at:
 
+```
+http://localhost:4000/menu
+```
+
+### 4) Start Next.js App
+```bash
 npm run dev
+```
+
+---
+
+## 📁 Local Database (db.json)
+
+Data example:
+
+```json
+{
+  "menu": [
+    {
+      "category": "Hot Coffee",
+      "items": [
+        {
+          "id": 1,
+          "title": "Hot Chocolate",
+          "price": 5,
+          "rating": 4,
+          "off": 20,
+          "image": "/home-menu/menu-3.jpg"
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+## 🔥 Dynamic Discount System
+
+<details>
+  <summary><b>Click to view logic</b></summary>
+
+The app checks if a product has a discount (off%).  
+If yes → it displays:
+
+- Old price (red + line-through)
+- New price (white)
+
+Example:
+
+```javascript
+{data.off ? (
+  <>
+    <p>${(data.price - (data.price * data.off) / 100).toFixed(2)}</p>
+    <p style={{ color: "red", textDecoration: "line-through" }}>
+      ${data.price.toFixed(2)}
+    </p>
+  </>
+) : (
+  <p>${data.price.toFixed(2)}</p>
+)}
+```
+
+</details>
+
+---
+
+## 🎠 Homepage Swiper Slider
+
+Using Swiper.js with Navigation module:
+
+```jsx
+<Swiper loop={true} navigation={true} modules={[Navigation]}>
+  <SwiperSlide style={{ backgroundImage: `url(${carousel1.src})` }} />
+</Swiper>
+```
+
+---
+
+## ⭐ Rating System
+
+Dynamic star generation:
+
+```jsx
+{Array.from({ length: 5 }).map((_, i) => (
+  <i key={i} className={`fa-star ${i < rating ? "filled" : ""}`} />
+))}
+```
+
+---
+
+## 🛠 Scripts
+
+```
+npm run dev        # Run Next.js
+npm run build      # Production build
+npm start          # Start after build
+json-server        # Mock API server
+```
+
+---
 
 
-Run JSON Server (if needed):
+## 🤝 Contributing
 
-json-server --watch db.json --port 3001
+Pull requests are welcome.  
+For major changes, please open an issue first to discuss what you would like to modify.
 
-Strengths of This Project
-1. Fully Modular and Scalable
+---
 
-Components are structured professionally and can be reused across the project.
+## 📄 License
 
-2. Production-Level Responsive Design
+This project is open-source and available under the **MIT License**.
 
-Navigation, product cards, forms, and sections all adapt perfectly to mobile, tablet, and desktop.
-
-3. Realistic Data Workflow Using JSON Server
-
-Simulates an actual backend environment, making the project ideal for portfolio and interviews.
-
-4. Developer-Friendly Architecture
-
-Easy to maintain, extend, or transition into a full-stack application.
-
-5. Clean UI & Smooth User Experience
-
-Suitable for commercial café or restaurant websites.
