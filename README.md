@@ -35,16 +35,48 @@ The project includes dynamic product pages, discount handling, rating display, S
 ## 🗂 Project Structure
 
 ```
-/app
- ├── home/
- ├── product/
- │    ├── [productId]/
- │    │      └── page.jsx
- │    ├── ProductsDetails.jsx
- │    └── Comments.jsx
- ├── globals.css
-└── public/
-      └── home-menu/
+app/
+│   globals.css
+│   layout.jsx
+│   page.jsx
+│
+├── about/
+│   └── page.jsx
+├── contact/
+│   └── page.jsx
+├── home/
+│   └── components/
+│       ├── home newsletter section/
+│       │   └── HomeNewsletter.jsx
+│       └── home slider section/
+│           ├── HomeSliderSection.jsx
+│           ├── HomeSliderSection.module.css
+│           └── carousel-1.jpg, carousel-2.jpg
+├── menu/
+│   └── page.jsx
+├── product/
+│   ├── Comments.jsx
+│   ├── Product.module.css
+│   ├── ProductsDetails.jsx
+│   └── [productId]/page.jsx
+├── reservation/
+│   └── page.jsx
+├── search/
+│   └── page.jsx
+├── services/
+│   └── page.jsx
+├── testimonial/
+│   └── page.jsx
+└── components/
+    ├── about section/      (AboutSection.jsx)
+    ├── book table/         (BookTable.jsx)
+    ├── comment/            (Comment.jsx + CommentItem.jsx)
+    ├── footer/             (Footer.jsx + Footer.module.css)
+    ├── header/             (Header.jsx + Header.module.css)
+    ├── menu section/       (Menu.jsx + MenuItem.jsx)
+    ├── navbar/             (Navbar.jsx + Navbar.module.css)
+    └── our services section/ (Services.jsx + ServiceItem.jsx)
+
 ```
 
 ---
