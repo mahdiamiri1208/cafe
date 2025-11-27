@@ -167,20 +167,6 @@
   max-height: 0;
 }
 
-/* زیرمنوی موبایل و رنگ inherit */
-.dropdown_menu {
-  position: static !important;
-  background: #33211d !important; /* رنگ inherit */
-  padding-left: 30px !important; /* فاصله به راست */
-  border: none !important;
-}
-
-.dropdown_item {
-  background: inherit; /* رنگ inherit */
-}
-.dropdown_item:hover {
-  color: inherit !important; /* رنگ inherit */
-}
 .nav_link {
   display: block;
   padding: 0.5rem 1rem;
