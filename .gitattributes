@@ -1,0 +1,6 @@
+# نادیده گرفتن فایل global.css در آمار زبان
+app/global.css linguist-detectable=false
+app/global.css linguist-vendored
+
+# یا اگر می‌خواهید تمام فایل‌های CSS نادیده گرفته شوند:
+*.css linguist-detectable=false
