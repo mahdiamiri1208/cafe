@@ -7,7 +7,7 @@ export default function ProductsDetails({ data }) {
 
   return (
     <div
-      className={`${styles.product_main} align-items-center mb-5 text-decoration-none justify-content-center`}
+      className={`${styles.product_main} align-items-center mb-5 text-decoration-none justify-content-center flex-wrap`}
     >
       <img
         className={`${styles.product_img} mb-3 mb-sm-0`}

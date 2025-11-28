@@ -1,5 +1,6 @@
 import ProductsDetails from "@/app/product/ProductsDetails";
 import Comments from "../Comments";
+import styles from "../Product.module.css";
 
 export default async function Page({ params }) {
   const resolvedParams = await params;
@@ -30,14 +31,13 @@ export default async function Page({ params }) {
     return (
       <>
         <div
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex justify-content-center align-items-center"
           style={{
-            background:
-              "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80)",
+            background: `linear-gradient(rgba(51,33,29,0.9), rgba(51,33,29,0.9)), url(/productbg.avif)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            padding: "370px",
+            padding:"350px"
           }}
         >
           <h1 className="text-white">Product not found</h1>
@@ -48,16 +48,7 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <div
-        style={{
-          background:
-            "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "150px",
-        }}
-      >
+      <div className={styles.productContainer}>
         <ProductsDetails data={product} />
       </div>
       <Comments data={product.comments || []} />

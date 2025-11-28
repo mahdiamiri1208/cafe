@@ -3,7 +3,6 @@
   margin: 0 auto;
   gap: 50px;
   display: flex;
-  padding-top: 100px;
   width: 100%;
   position: relative;
 }
@@ -66,4 +65,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)),
+    url("/productbg.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0px 150px;
+}
+
+@media (max-width: 976px) {
+  .productContainer {
+    padding: 100px 60px 150px;
+  }
+}
+@media (max-width: 768px) {
+  .productContainer {
+    padding: 100px 30px 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productContainer {
+    padding: 70px 20px 150px;
+  }
 }
