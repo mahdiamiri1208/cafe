@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import HomeMenuItem from "../components/menu section/MenuItem";
 import Header from "../components/header/Header";
 
-export const dynamic = "force-dynamic";
-
-export default function SearchResult() {
+// کامپوننت اصلی را در Suspense بپیچ
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.toLowerCase() || "";
 
@@ -74,5 +73,18 @@ export default function SearchResult() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function SearchResult() {
+  return (
+    <Suspense fallback={
+      <>
+        <div className="container-fluid pt-5">
+        </div>
+      </>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
