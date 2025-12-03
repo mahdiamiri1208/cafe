@@ -14,7 +14,7 @@ export default function SearchResult() {
 
   useEffect(() => {
     async function fetchMenu() {
-      const res = await fetch("http://localhost:4000/menu");
+      const res = await fetch("https://cafe-db.vercel.app/menu");
       const data = await res.json();
       setMenuCategories(data);
 

@@ -1,7 +1,7 @@
 import HomeMenuItem from "./MenuItem";
 
 export default async function HomeMenu() {
-  const res = await fetch("http://localhost:4000/menu", {
+  const res = await fetch("https://cafe-db.vercel.app/menu", {
     next: { revalidate: 60 * 60 * 12 },
   });
   const menuCategories = await res.json();

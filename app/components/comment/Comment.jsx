@@ -2,7 +2,7 @@ import React from "react";
 import HomeCommentItem from "./CommentItem";
 
 export default async function HomeComment() {
-  const res = await fetch("http://localhost:4000/comments", {
+  const res = await fetch("https://cafe-db.vercel.app/comments", {
     next: { revalidate: 60 * 60 * 12 },
   });
   const comments = await res.json();

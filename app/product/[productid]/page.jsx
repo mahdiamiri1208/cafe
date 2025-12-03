@@ -15,17 +15,15 @@ export default async function Page({ params }) {
     return <div style={{ color: "white" }}>Product ID is not a number</div>;
   }
 
-  const res = await fetch("http://localhost:4000/menu", { cache: "no-store" });
+  const res = await fetch("https://cafe-db.vercel.app/menu", { cache: "no-store" });
   if (!res.ok) {
     return <div style={{ color: "white" }}>Failed to fetch menu</div>;
   }
   const data = await res.json();
 
   const allItems = data.flatMap((category) => category.items || []);
-  console.log("all items:", allItems);
   const product = allItems.find((item) => Number(item.id) === productId);
 
-  console.log("searched id:", productId, "found product:", product);
 
   if (!product) {
     return (

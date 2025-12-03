@@ -18,17 +18,15 @@ export default function HomeBookTable() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:4000/book-table", {
+    const res = await fetch("https://cafe-db.vercel.app/book-table", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
 
     const data = await res.json();
-    console.log(res);
     if (res.ok === true) {
       // اگر درخواست موفق بود
-      console.log("Booking successful:", data);
       setForm({
         name: "",
         email: "",

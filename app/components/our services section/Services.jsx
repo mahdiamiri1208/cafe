@@ -2,7 +2,7 @@ import React from "react";
 import HomeServiceItem from "./ServiceItem";
 
 export default async function HomeServices() {
-  const res = await fetch("http://localhost:4000/services", {
+  const res = await fetch("https://cafe-db.vercel.app/services", {
     next: { revalidate: 60 * 60 * 12 },
   });
 

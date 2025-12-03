@@ -17,7 +17,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      const res = await fetch("http://localhost:4000/contacts", {
+      const res = await fetch("https://cafe-db.vercel.app/contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
