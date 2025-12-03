@@ -13,25 +13,35 @@ export default function SearchResult() {
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    async function fetchMenu() {
-      const res = await fetch("https://cafe-db.vercel.app/menu");
-      const data = await res.json();
-      setMenuCategories(data);
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch("https://cafe-db.vercel.app/menu");
+        if (!res.ok) throw new Error("Failed to fetch menu");
+        const data = await res.json();
 
-      if (query) {
-        const result = data
-          .map((category) => {
-            const filtered = category.items.filter((item) =>
-              item.title.toLowerCase().includes(query)
-            );
-            if (filtered.length > 0) return { ...category, items: filtered };
-            return null;
-          })
-          .filter(Boolean);
+        setMenuCategories(data);
 
-        setFilteredItems(result);
+        if (query) {
+          const result = data
+            .map((category) => {
+              const filtered = category.items.filter((item) =>
+                item.title.toLowerCase().includes(query)
+              );
+              if (filtered.length > 0) return { ...category, items: filtered };
+              return null;
+            })
+            .filter(Boolean);
+
+          setFilteredItems(result);
+        } else {
+          setFilteredItems([]);
+        }
+      } catch (error) {
+        console.error(error);
+        setFilteredItems([]);
       }
-    }
+    };
+
     fetchMenu();
   }, [query]);
 
