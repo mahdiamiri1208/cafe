@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import HomeMenuItem from "../components/menu section/MenuItem";
 import Header from "../components/header/Header";
 
+export const dynamic = "force-dynamic";
+
 export default function SearchResult() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.toLowerCase() || "";
